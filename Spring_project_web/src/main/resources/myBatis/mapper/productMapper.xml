@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="productMapper">
+  <select id="selectOne" parameterType="java.lang.Integer" resultType="ProductDTO">
+  	select * from product where num=#{num}
+  </select>
+   <select id="selectById" parameterType="java.lang.Integer" resultType="ProductDTO">
+  	select * from product where product_id=#{product_id}
+  </select>
+  	<select id="totalCount" parameterType="Pager" resultType="java.lang.Integer">
+  		select count(num) from product
+  		<choose>
+  			<when test="kind == 'food'">
+	  			 where kind = 'food'
+	  		</when>
+	  		<when test="kind == 'digital'">
+	  			 where kind = 'digital'
+	  		</when>
+	  		<when test="kind == 'office'">
+	  			 where kind = 'office'
+	  		</when>
+	  		<when test="kind == 'household'">
+	  			 where kind = 'household'
+	  		</when>
+	  		<when test="kind == 'interior'">
+	  			 where kind = 'interior'
+	  		</when>
+	  		<when test="kind == 'kitchen'">
+	  			 where kind = 'kitchen'
+	  		</when>
+	  		<when test="kind == 'beauty'">
+	  			 where kind = 'beauty'
+	  		</when>
+	  		<when test="kind == 'fashion'">
+	  			 where kind = 'fashion'
+	  		</when>
+	  		<when test="kind == 'sports'">
+	  			 where kind = 'sports'
+	  		</when>
+	  		<when test="kind == 'books'">
+	  			 where kind = 'books'
+	  		</when>
+	  		<when test="kind == 'toys'">
+	  			 where kind = 'toys'
+	  		</when>
+	  		<when test="kind == 'animal'">
+	  			 where kind = 'animal'
+	  		</when>
+	  		<when test="kind == 'baby'">
+	  			 where kind = 'baby'
+	  		</when>
+	  	</choose>
+  	</select>  
+  <select id="productList" parameterType="Pager" resultType="ProductDTO">
+  	select * from 
+  	(select rownum R, P.* from
+  	(select * from product 
+  	<choose>
+  			<when test="kind == 'food'">
+	  			 where kind = 'food'
+	  		</when>
+	  		<when test="kind == 'digital'">
+	  			 where kind = 'digital'
+	  		</when>
+	  		<when test="kind == 'office'">
+	  			 where kind = 'office'
+	  		</when>
+	  		<when test="kind == 'household'">
+	  			 where kind = 'household'
+	  		</when>
+	  		<when test="kind == 'interior'">
+	  			 where kind = 'interior'
+	  		</when>
+	  		<when test="kind == 'kitchen'">
+	  			 where kind = 'kitchen'
+	  		</when>
+	  		<when test="kind == 'beauty'">
+	  			 where kind = 'beauty'
+	  		</when>
+	  		<when test="kind == 'fashion'">
+	  			 where kind = 'fashion'
+	  		</when>
+	  		<when test="kind == 'sports'">
+	  			 where kind = 'sports'
+	  		</when>
+	  		<when test="kind == 'books'">
+	  			 where kind = 'books'
+	  		</when>
+	  		<when test="kind == 'toys'">
+	  			 where kind = 'toys'
+	  		</when>
+	  		<when test="kind == 'animal'">
+	  			 where kind = 'animal'
+	  		</when>
+	  		<when test="kind == 'baby'">
+	  			 where kind = 'baby'
+	  		</when>
+	  	</choose>
+  	 order by num desc) P)
+  	where R between #{startRow} and #{lastRow}
+  </select>
+  <insert id="addProduct" parameterType="ProductDTO">
+  	insert into product values(#{num}, #{title}, #{price}, #{amount}, #{kind}, #{num}, #{seller} )
+  
+  </insert>
+  <delete id="deleteProduct" parameterType="java.lang.Integer">
+  	delete product where num=#{num}
+  </delete>
+  <update id="updateProduct" parameterType="ProductDTO">
+  	update product set title=#{title}, price=#{price}, amount=#{amount}, kind=#{kind}
+  </update>
+    <select id="getNum" resultType="java.lang.Integer" >
+  		select product_seq.nextval from dual
+  	</select>
+  
+  
+  
+  <select id="myProductList" parameterType="Pager" resultType="ProductDTO">
+  	select * from 
+  	(select rownum R, P.* from
+  	(select * from product where id = #{id} and seller = #{seller}
+  	 order by num desc) P)
+  	where R between #{startRow} and #{lastRow}
+  </select>
+  
+  
+  </mapper>

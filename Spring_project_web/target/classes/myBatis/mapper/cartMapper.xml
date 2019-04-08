@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="cartMapper">
+  <select id="cartList" parameterType="MemberDTO" resultType="CartDTO">
+  	select * from cart where id=#{id}
+  </select>
+  <insert id="insert" parameterType="CartDTO">
+  	insert into cart values(cart_seq.nextval, #{amount}, #{shipping}, #{total}, #{product_id}, #{id})
+  </insert>
+  <update id="update" parameterType="CartDTO">
+  	update cart set amount=#{amount}, shipping=#{shipping}, total=#{total} where id=#{id} and product_id=#{product_id}
+  </update>
+  <!-- 갯수 수정 -->
+  <update id="updateAmount" parameterType="CartDTO">
+  	update cart set amount = amount + #{amount} where id=#{id} and product_id=#{product_id} 
+  </update>
+  
+  <delete id="delete" parameterType="java.lang.Integer">
+  	delete cart where num=#{num}
+  </delete>
+  
+  <select id="sumPrice" resultType="java.lang.Integer" parameterType="java.lang.String">
+  	select NVL(SUM(product.price * cart.amount), 0) total 
+  	from cart, product 
+  	where product.product_id = cart.product_id and cart.id=#{id}
+  </select>
+  
+  <!-- 동일상품 확인 -->
+  <select id="countCart" resultType="java.lang.Integer">
+  	select count(*) from cart where id=#{id} and product_id=#{product_id}
+  </select>
+  
+  </mapper>

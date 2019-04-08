@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.ft.util.Pager" alias="Pager"/>
+		<typeAlias type="com.ft.file.FileDTO" alias="FileDTO"/>
+		<typeAlias type="com.ft.comment.CommentDTO" alias="CommentDTO"/>
+		<typeAlias type="com.ft.member.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type="com.ft.order.OrderDTO" alias="OrderDTO"/>
+		<typeAlias type="com.ft.product.ProductDTO" alias="ProductDTO"/>
+		<typeAlias type="com.ft.cart.CartDTO" alias="CartDTO"/>
+		<typeAlias type="com.ft.order.OrderManDTO" alias="OrderManDTO"/>
+		
+	</typeAliases>
+</configuration>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+			
+		
+				
+	
+
+		
+		 <!-- id,pw,url 정보 입력 driverName은 내가 사용하려고 하는 데이터 베이스 정보 담아주기 -->
+		<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+			<property name="username" value="jjy" />
+			<property name="password" value="jjy" />
+			<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+			
+		</bean>
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		<!-- 얘한테 위에 객체들 넣으라는 뜻 -->
+		<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"></property>
+			<property name="mapperLocations" value="classpath:myBatis/mapper/*Mapper.xml"></property>
+			<property name="configLocation" value="classpath:myBatis/config/myBatisConfig.xml"></property>
+		</bean>
+		
+		
+		<!-- 바로 위에꺼 전송하고 결과 받아오기 -->
+		<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+			<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
+		</bean>
+		
+	
+		
+		
+		<!-- 파일업로드 -->
+		
+		<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+		<!-- 파일 총 size -->
+		<property name="maxUploadSize" value="1048999"></property>
+		<!-- 파일 당 size -->
+		<property name="maxUploadSizePerFile" value="10489999"></property>
+		<property name="defaultEncoding" value="UTF-8"></property>
+		
+	</bean>
+</beans>

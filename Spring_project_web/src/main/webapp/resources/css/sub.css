@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+/* common */
+.btnWrap input[type="button"] {    width: 124px;
+    display: inline-block;
+    text-align: center;
+    height: 54px;
+    line-height: 40px;
+    font-size: 15px;}
+
+
+/*login css */
+    .loginBox{top: 25%;left: 35%;position: absolute;width:500px; height:475px; padding:30px 40px 40px 40px; border:1px solid #d1d1d1; border-radius: 5px; margin: 0 auto; background-color: #fff;}
+    .loginBox p{background: #fff;}
+    .loginBox .inputBox{ margin-top: 30px;}
+    .loginBox input{width: 300px; height: 40px; padding:5px; margin-top: 5px; margin-bottom: 10px; background: #fff; border-radius: 5px; border:1px solid;} 
+    .loginBox .logo{width:200px; height:200px; display: inline-block}
+    
+	/*.loginBox p:first-child input{margin-left: 8px;}*/
+    .loginBox .forgot{font-size: 11px; background-color: #fff; color:#333;}
+    .loginBox button{width: 300px; height: 40px; padding:5px 10px; margin-top: 10px;  border-radius: 5px; background-color: #333; color:#fff; border: 2px solid;}
+
+/* join */
+    input[type="radio"]{width: 14px; vertical-align: middle;}
+    .phone input[type="text"]{width: 60px; vertical-align: middle;}
+    label{margin-left: 10px;}
+    h3{margin-top: /* 20px */50px; padding-bottom: 10px; border-bottom: 3px solid #000;}
+    .memberJoin{width: 800px; margin-top: 30px;}
+    .memberJoin input{padding:3px;}
+    .memberJoin div.id_check{display: inline-block; background-color: #000; color: #fff; border-radius: 3px; margin-left: 10px; padding: 3px 10px;}
+    .memberJoin input{margin-top: 5px; margin-bottom: 5px;}
+    .memberJoin th{width: 130px;}
+    .memberJoin th, td{border: 1px solid #999; height: 65px; padding: 15px 10px;}
+    .memberJoin tfoot td{border: none;}
+    .memberJoin tfoot td input{width: 150px; padding: 7px 0 10px; margin: 5px;border: none; background: #000; color: #fff;}
+    
+    .agreement{text-align: center;}
+    .agreement h3{text-align: left;}
+    .agreeBox{width: 500px; height: 450px; border: 1px solid #000; margin: 0 auto; display: inline-block; margin-top: 30px; text-align: left;}
+    .agreeBox input[type="checkbox"]{width: 20px; margin-right: 5px;}
+    .agreeBox .allcheck{padding: 15px 0; border-bottom: 1px solid #999;}
+    .agreeBox .selectAgree {border-bottom: 1px solid #999;}
+    .agreeBox .selectAgree ul li{/* float: left; */ display:inline-block; padding: 15px 0;}
+/*product List*/
+        .history {width: 100%; height: 30px;  background: #333;}
+        .history ul li{float: left; color: #fff; line-height: 30px;}
+        .slider{    width: 100%; height: 150px;}
+        .subCategoryWrap{width: 100%; height: auto;}
+        .subCategoryWrap .categoryIcon{width: 180px; height:50px; display: inline-block; float: left;}
+        
+        .c_title{clear: both; text-align: left;}
+        /*상품정보박스*/
+        .productList{clear: both;}
+        .pInfoWrap{min-width: 212px;width: 15%;padding: 20px;display: inline-block; float: left;text-align: left;margin: 0 10px; overflow: hidden;line-height: 28px;}
+        .pInfoWrap a{color:#000;}
+        .pInfoWrap a:hover{color:#419840;}
+        .pInfoWrap .pPrice{color:#ae0000; font-size: 15px; font-weight: bold;}
+        .pListThumbnail{width:300px; height:300px; overflow: hidden;}
+        .pListThumbnail img{max-width: 100%;}
+        /*.pInfoWrap div{margin: 7px 0 7px 0;}*/
+        .pInfoWrap .arrival_info{color:#419840;}
+        
+/*productAdd/Update*/
+    h1.pageTitle{border-bottom: 1px solid #c4c5c7; padding: 10px; margin-bottom: 40px;}
+    select{vertical-align: middle;    height: 25px; line-height: 30px;    padding-bottom: 3px;}
+    table{width:80%; margin: 0 auto; border-collapse: collapse; text-align: left;}
+    table th{width:150px; min-height:30px;font-weight: 500;padding: 20px 0;}
+    table th, table td{vertical-align: middle;}
+    input{vertical-align: middle;} 
+    input[type="text"]{width:350px; }
+    .btn {width: 300px; height: 40px; padding:5px 10px; margin-top: 10px;  border-radius: 5px; background-color: #333; color:#fff; border: 2px solid;}
+    textarea{width:80%; height:200px;}
+    .btnWrap{padding-top: 30px;}
+
+/*productSelectOne*/
+        .fLeft{float: left;}
+        .fRight{float: right;}
+        .pThumbnail {width: 460px; height: 460px; margin-top:52px; margin-right:30px; overflow: hidden;}
+        .pInfoBox{width:460px;/* height: 460px;*/ text-align: left; margin: 30px 0;}
+        .pInfoBox .origin_price{color:#aaa;}
+        .pInfoBox .totalPrice{font-size: 24px;}
+        .del{position: absolute;top: 50%;right: 0;left: 0;height: 1px;margin-top: -1px;background-color: #aaa;}
+        .pInfoBox input,.pInfoBox select  {width: 60px;}
+        .btnWrap .btn{width: 100px; display: inline-block; text-align: center; line-height: 40px; /*padding: 15px 10px;*/}
+        .btnWrap .order.btn{background: #ae0000;}
+        .productSelectOne table{margin: 0;}
+        .productSelectOne .contentsWrap{text-align: center;}
+        .productBox{display: inline-block;width: 1000px;}
+        .productSelectOne hr{clear: both; margin: 20px 0; } 
+
+/* orderList css */
+table.orderTable{margin-top: 50px;}
+        table.orderTable .num{width:50px; text-align: center;}
+        table.orderTable .orderNum{width:150px; text-align: center;}
+        table.orderTable .name{width:auto; min-width: 250px;}
+        table.orderTable .reg_date{width:150px;  text-align: center;}
+        table.orderTable .price {width:100px; text-align: center;}
+        table.orderTable .shippingNum {width:150px; text-align: center;}
+        table.orderTable .step {width: 100px; text-align: center;}
+        table.orderTable th{text-align: center; background-color: #f4f4f4; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4;}
+        table.orderTable td{padding: 10px 4px; border-bottom: 1px solid #d4d4d4;}
+        .list_remocon{margin-top: 20px;}
+        f_gray{color:#9e9e9e;}
+        
+      /*   mypage css */
+      
+      .myInfoWrap{width: 95%; margin: 0 auto;}
+        .myInfo{display:inline-block; min-width: 400px; height:200px; width: 50%; padding: 15px; float: left; border-right: 1px solid #d4d4d4;line-height: 50px; }
+        .membershipWrap{display: inline-block; width: 400px; height:200px; float: left; padding: 15px;}
+        .membership{display:inline-block; width: 45%; height: 100px; border-bottom: 1px solid #d4d4d4; padding: 15px;/*line-height: 45px;*/}
+        .membership p:first-child{padding-top: 20px;}
+        .membership p{line-height: 25px;}
+        .membershipInfo{line-height: 100px;}
+        .linkBoxWrap{clear: both; width:100%; margin: 30px 0;}
+        .linkBox{/*display: inline-block;*/     float: left;width:45%; height: 200px; line-height: 200px; border: 2px solid #d4d4d4; /*margin:10px;*/}
+        
+
+		/*cartList*/
+		table.cartList{margin-top: 50px;}
+        table.cartList th{text-align: center; background-color: #f4f4f4; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4;}
+        table.cartList td{padding: 10px 4px; border-bottom: 1px solid #d4d4d4;}
+        table.cartList .num{width:50px; text-align: center;}
+        table.cartList .amount{width:50px; text-align: center;}
+        table.cartList .name{width:auto; min-width: 250px;}
+        table.cartList td.name{line-height: 112px;}
+        table.cartList td.name span{padding-left: 10px;}
+        table.cartList .cancle{width:150px;  text-align: center;}
+        table.cartList .price {width:100px; text-align: center;}
+        table.cartList .shippingprice {width: 100px; text-align: center;}
+        table.cartList button{margin: 3px; border-radius: 3px; border:1px solid #aaa; padding: 0 4px 4px 4px;}
+        .productPhoto{display: inline-block; width: 90px; height: 112px; background: #aaa;}
+        .btnWrap{width: 100%; text-align: center;}
+        div.clear, div.continue {display: inline-block; width:130px; padding: 20px 15px; border-radius: 3px; background-color: #fff; border: 1px solid #000; text-align: center; color: #000;}
+        div.orderBtn {display: inline-block; width:130px; padding: 20px 15px; border-radius: 3px; background-color: #000; text-align: center; color: #fff;}
+        .option div img {margin-left: 160px;}
+        .option div .choose{margin-left: 10px;}
+        
+        /*orderList*/
+        .orderListWrap h4{margin-top:20px;text-align: center;}
+        table.orderList{margin-top: 50px; margin-bottom: 50px;}
+        table.orderList th{text-align: center; background-color: #f4f4f4; border-top: 1px solid #d4d4d4; border-bottom: 1px solid #d4d4d4;}
+        table.orderList td{padding: 10px 4px; border-bottom: 1px solid #d4d4d4;}
+        table.orderList .num{width:50px; text-align: center;}
+        table.orderList .amount{width:50px; text-align: center;}
+        table.orderList .name{width:auto; min-width: 250px;}
+        table.orderList td.name{line-height: 112px;}
+        table.orderList td.name span{padding-left: 10px;}
+        table.orderList .cancle{width:150px;  text-align: center;}
+        table.orderList .price {width:100px; text-align: center;}
+        table.orderList .shippingprice {width: 100px; text-align: center;}
+        table.orderList button{margin: 3px; border-radius: 3px; border:1px solid #aaa; padding: 0 4px 4px 4px;}
+        .productPhoto{display: inline-block; width: 90px; height: 112px; background: #aaa; overflow:hidden;}
+        .btnWrap{width: 100%; text-align: center;}
+        div.clear, div.continue {display: inline-block; width:130px; padding: 20px 15px; border-radius: 3px; background-color: #fff; border: 1px solid #000; text-align: center; color: #000;}
+        div.orderBtn {display: inline-block; width:130px; padding: 20px 15px; border-radius: 3px; background-color: #000; text-align: center; color: #fff;}
+        .option div img {margin-left: 160px;}
+        .option div .choose{margin-left: 10px;}
+        
+    	.memberPhone input[type="text"]{width: 60px; vertical-align: middle;}
+    	.smallTitle{margin:20px 0;text-align: center;}
+    	
+    	.orderBtn{    width: 162px !important;
+    padding: 26px 25px;
+    border-radius: 3px;
+    background-color: #333;
+    color: #fff;
+    margin-top: -3px;
+    border: 3px solid #333;
+    line-height: 0 !important;}

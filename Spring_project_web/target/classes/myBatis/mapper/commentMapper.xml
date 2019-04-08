@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="commentMapper">
+    <select id="getNum" resultType="java.lang.Integer" >
+  		select memo_seq.nextval from memo
+  	</select>
+  <insert id="insert" parameterType="CommentDTO">
+  	insert into memo values(memo_seq.nextval, #{name}, #{contents}, #{photo}, sysdate, 0,memo_seq.currval,0,0)
+  </insert>
+  <update id="update" parameterType="CommentDTO">
+   update memo set contents=#{contents}, photo=#{photo} where num=#{num}
+  </update>
+  <delete id="delete" parameterType="java.lang.Integer">
+ 	delete memo where num=#{num} 
+  </delete>
+  <select id="selectOne" parameterType="CommentDTO" resultType="CommentDTO">
+  	select * from memo where num=#{num} and contents=#{contents}
+  </select>
+  <select id="list" parameterType="java.lang.Integer" resultType="CommentDTO">
+  	select * from
+  	(select rownum R, M.* from
+  	(select * from memo order by num desc) M)
+  	where R between #{startRow} and #{lastRow}
+  </select>
+  
+  <insert id="reply" parameterType="CommentDTO">
+  	insert into memo values(memo_seq.nextval, #{name}, #{contents}, #{photo}, sysdate, 0, #{ref}, #{step}, #{depth})
+  </insert>
+  <update id="replyUpdate" parameterType="CommentDTO">
+  	update memo set step=step+1 where ref=#{ref} and step>#{step}
+  </update>
+  
+  <select id="totalCount" parameterType="Pager" resultType="java.lang.Integer">
+  		select count(num) from memo where 
+  		<choose>
+  			<when test="kind == 'name'">
+  				name
+  			</when>
+  			<when test="kind == 'contents'">
+  				contents
+  			</when>
+  			<otherwise>
+  				title
+  			</otherwise>
+  		</choose>
+  			like '%'||#{search}||'%'
+  	</select>
+  
+  
+  </mapper>

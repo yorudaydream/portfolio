@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="orderMapper">
+
+  <select id="orderList" parameterType="java.lang.String" resultType="OrderDTO">
+  	select * from orderlist where id=#{id} order by num desc
+  </select>
+  <select id="selectOrder" parameterType="java.lang.Integer" resultType="OrderDTO">
+  	select * from orderlist where ordernNum=#{orderNum}
+  </select>
+  <insert id="addOrder" parameterType="OrderDTO">
+  	insert into orderlist values(#{orderNum}, #{product_id}, #{title}, sysdate, #{total}, #{shippingNum}, 0, #{amount})
+  </insert>
+  <insert id="orderMan" parameterType="OrderManDTO">
+  	insert into orderman values (#{orderNum}, #{name}, #{address}, #{phone}, #{email}, #{use})
+  </insert>
+  
+  <update id="updateOrder" parameterType="OrderDTO">
+  	update orderlist set shippingNum=#{shippingNum}, step=#{step}
+  </update>
+  <delete id="deleteOrder" parameterType="java.lang.Integer">
+  	delete orderlist where orderNum=#{orderNum}
+  </delete>
+  <!--  <select id="getNum" resultType="java.lang.Integer" >
+  		select order_seq.nextval from dual
+  	</select> -->
+  </mapper>
